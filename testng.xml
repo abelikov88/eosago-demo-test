@@ -1,0 +1,10 @@
+<suite name = "microfinance-selenium-tests" parallel = "classes" thread-count = "1">
+    <test name = "test">
+        <listeners>
+            <listener class-name="utils.Listener"/>
+        </listeners>
+        <classes>
+            <class name="OsagoAgreementTest"/>
+        </classes>
+    </test>
+</suite>
