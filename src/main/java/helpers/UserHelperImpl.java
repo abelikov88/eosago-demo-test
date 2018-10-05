@@ -1,6 +1,7 @@
 package helpers;
 
 import logic.UserHelper;
+import models.Agreement;
 
 /**
  * @author abelikov
@@ -20,23 +21,23 @@ public class UserHelperImpl extends DriverHelper implements UserHelper {
     }
 
     @Override
-    public void fillVinNumber() {
+    public void fillVinNumber(Agreement agreement) {
         pages.osagoAgreementPage
-            .setVinInput("WAUZZZ8T4BA037241");
+            .setVinInput(agreement.getVinNumber());
     }
 
     @Override
-    public void fillVehicleComplete() {
+    public void fillVehicleComplete(Agreement agreement) {
         pages.osagoAgreementPage
-            .selectMark("Audi")
-            .selectModel("A5")
-            .selectYear("2010")
-            .setVinInput("WAUZZZ8T4BA037241")
-            .setStateNumber("Р904МХ178")
-            .setEnginePower("211")
-            .setTsSeries("78УН")
-            .setTsNumber("267461")
-            .setDate("01.11.2010");
+            .selectMark(agreement.getMark())
+            .selectModel(agreement.getModel())
+            .selectYear(agreement.getYear())
+            .setVinInput(agreement.getVinNumber())
+            .setStateNumber(agreement.getStateNumber())
+            .setEnginePower(agreement.getEnginePower())
+            .setTsSeries(agreement.getTsSeries())
+            .setTsNumber(agreement.getTsNumber())
+            .setDate(agreement.getDate());
     }
 
     @Override

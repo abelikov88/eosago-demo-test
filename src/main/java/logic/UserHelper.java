@@ -1,14 +1,16 @@
 package logic;
 
+import models.Agreement;
+
 public interface UserHelper {
 
     void login();
 
-    void fillVinNumber();
+    void fillVinNumber(Agreement agreement);
 
     void verifyLogin();
 
-    void fillVehicleComplete();
+    void fillVehicleComplete(Agreement agreement);
 
     void verifyTO();
 

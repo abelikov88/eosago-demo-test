@@ -1,3 +1,5 @@
+import fixtures.AgreementFixtures;
+import models.Agreement;
 import org.testng.annotations.Test;
 import pages.TestBase;
 
@@ -14,7 +16,8 @@ public class OsagoAgreementTest extends TestBase {
     public void technicalInspectionTest() {
         manager.getNavigationHelper().openBaseUrl();
         manager.getUserHelper().login();
-        manager.getUserHelper().fillVinNumber();
+        Agreement agreement = AgreementFixtures.getAgreement("agreement");
+        manager.getUserHelper().fillVinNumber(agreement);
         manager.getUserHelper().verifyTO();
     }
 
@@ -22,7 +25,8 @@ public class OsagoAgreementTest extends TestBase {
     public void documentsTest() {
         manager.getNavigationHelper().openBaseUrl();
         manager.getUserHelper().login();
-        manager.getUserHelper().fillVehicleComplete();
+        Agreement agreement = AgreementFixtures.getAgreement("agreement");
+        manager.getUserHelper().fillVehicleComplete(agreement);
         manager.getUserHelper().verifyDocuments();
     }
 }
